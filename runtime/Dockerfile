@@ -1,1 +1,1 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine AS base
+FROM mcr.microsoft.com/dotnet/core/runtime:2.1 AS base
