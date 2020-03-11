@@ -22,7 +22,7 @@ jobs:
     displayName: 'Build an ius-build-base image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: 'ius-build-base/Dockerfile'
       imageName: 'ius-build-base:$(Build.BuildId)'
       includeLatestTag: true
@@ -30,7 +30,7 @@ jobs:
     displayName: 'Push an ius-build-baseimage'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'ius-build-base:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -38,7 +38,7 @@ jobs:
     displayName: 'Push an ius-build-base latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'ius-build-base:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -58,7 +58,7 @@ jobs:
     displayName: 'Build an autorest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: buildtools/Dockerfile
       imageName: 'buildtools:$(Build.BuildId)'
       includeLatestTag: true
@@ -67,7 +67,7 @@ jobs:
     displayName: 'Push an autorest image '
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'buildtools:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -76,7 +76,7 @@ jobs:
     displayName: 'Push an autorest latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'buildtools:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -95,7 +95,7 @@ jobs:
     displayName: 'Build an autorest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: autorest/Dockerfile
       imageName: 'autorest:$(Build.BuildId)'
       includeLatestTag: true
@@ -104,7 +104,7 @@ jobs:
     displayName: 'Push an autorest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'autorest:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -113,7 +113,7 @@ jobs:
     displayName: 'Push an autorest latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'autorest:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -132,7 +132,7 @@ jobs:
     displayName: 'Build an autorest image copy'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: 'iconrelay-autorest/Dockerfile'
       imageName: 'iconrelay-autorest:$(Build.BuildId)'
       includeLatestTag: true
@@ -141,7 +141,7 @@ jobs:
     displayName: 'Push an autorest image copy'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'iconrelay-autorest:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -150,7 +150,7 @@ jobs:
     displayName: 'Push an autorest latest image copy'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'iconrelay-autorest:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -163,7 +163,7 @@ jobs:
     displayName: 'Build a runtime image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: runtime/Dockerfile
       imageName: 'dotnet-runtime:$(Build.BuildId)'
       includeLatestTag: true
@@ -172,7 +172,7 @@ jobs:
     displayName: 'Push a runtime image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'dotnet-runtime:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -181,7 +181,7 @@ jobs:
     displayName: 'Push a runtime latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'dotnet-runtime:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -194,7 +194,7 @@ jobs:
     displayName: 'Build a web image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: web/Dockerfile
       imageName: 'web-build:$(Build.BuildId)'
       includeLatestTag: true
@@ -203,7 +203,7 @@ jobs:
     displayName: 'Push a web image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'web-build:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -212,7 +212,7 @@ jobs:
     displayName: 'Push a web latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'web-build:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -225,7 +225,7 @@ jobs:
     displayName: 'Build a service image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: service/Dockerfile
       imageName: 'service-build:$(Build.BuildId)'
       includeLatestTag: true
@@ -234,7 +234,7 @@ jobs:
     displayName: 'Push a service image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'service-build:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -243,7 +243,7 @@ jobs:
     displayName: 'Push a service latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'service-build:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -262,7 +262,7 @@ jobs:
     displayName: 'Build a mdl image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: mdl/Dockerfile
       imageName: 'mdl-build:$(Build.BuildId)'
       includeLatestTag: true
@@ -271,7 +271,7 @@ jobs:
     displayName: 'Push a mdl image '
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'mdl-build:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -280,7 +280,7 @@ jobs:
     displayName: 'Push a mdl latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'mdl-build:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -299,7 +299,7 @@ jobs:
     displayName: 'Build a custom-error image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: 'custom-errors/Dockerfile'
       imageName: 'custom-errors:$(Build.BuildId)'
       includeLatestTag: true
@@ -308,7 +308,7 @@ jobs:
     displayName: 'Push a custom-errors image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'custom-errors:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -317,7 +317,7 @@ jobs:
     displayName: 'Push a custom-errors latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'custom-errors:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -336,7 +336,7 @@ jobs:
     displayName: 'Build a dockerfile-template image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       dockerFile: 'buildtools/dockerfile-template/Dockerfile'
       imageName: 'dockerfile-template:$(Build.BuildId)'
       includeLatestTag: true
@@ -345,7 +345,7 @@ jobs:
     displayName: 'Push a dockerfile-template image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'dockerfile-template:$(Build.BuildId)'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -354,7 +354,7 @@ jobs:
     displayName: 'Push a dockerfile-template latest image'
     inputs:
       azureSubscriptionEndpoint: Common
-      azureContainerRegistry: $(registry)
+      azureContainerRegistry: '$(registry)'
       command: 'Push an image'
       imageName: 'dockerfile-template:latest'
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
