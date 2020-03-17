@@ -10,10 +10,6 @@ RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-lin
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-# to fix error or warning in build
-# didnt work RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-dpkg-reconfigure debconf
-
 # Python3
 RUN apt-get update
 RUN apt-get install -y \
