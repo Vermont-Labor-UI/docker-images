@@ -10,8 +10,6 @@ RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-lin
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN echo $("help")
-
 # Python3
 RUN apt-get update
 RUN apt-get install -y \
