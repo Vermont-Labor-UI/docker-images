@@ -1,9 +1,9 @@
-FROM iusdev.azurecr.io/dotnet-runtime:latest AS base
+FROM vtiusdev.azurecr.io/dotnet-runtime:latest AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM iusdev.azurecr.io/{{docker-build-image}}:latest AS build
+FROM vtiusdev.azurecr.io/{{docker-build-image}}:latest AS build
 ARG version=0.0.0
 WORKDIR /src
 COPY ["NuGet.Config", "src/"]
